@@ -1,0 +1,45 @@
+h1{
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Fredoka One' sans-serif;
+    margin: 100px;
+    padding: 10px;
+}
+label{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 22px;
+    padding-left: 33px;
+    font-family: 'Fredoka One' sans-serif;
+}
+
+body
+        .search {
+            background-color: lightskyblue;
+            color: white;
+            border: lightblue;
+            font-size: var(--font-size);
+            cursor: pointer;
+            padding: 0.25em 1em;
+            border-radius: 5px;
+
+        }
+P{
+    color: black;
+}
+
+.card{
+    margin: 11px;
+}
+
+.colOne{
+    background-color: bisque;
+}
+.colTwo{
+    background-color: white;
+}
+.histBtnRow{
+    margin-top: 5px;
+    margin-top: 5px;
+    border: solid; color: darkslategrey
+}
