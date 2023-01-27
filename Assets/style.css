@@ -1,5 +1,8 @@
+body{}
+
+
 h1{
-    background-color: lightblue;
+    background-color: rgb(122, 196, 93);
     text-align: center;
     font-family: 'Fredoka One' sans-serif;
     margin: 100px;
@@ -15,9 +18,9 @@ label{
 
 
         .search {
-            background-color: lightskyblue;
+            background-color: rgb(121, 187, 125);
             color: white;
-            border: lightblue;
+            border: rgb(123, 156, 137);
             font-size: var(--font-size);
             cursor: pointer;
             padding: 0.25em 1em;
@@ -39,5 +42,5 @@ P{
 .histBtnRow{
     margin-top: 5px;
     margin-top: 5px;
-    border: solid; color: darkslategrey
+    border: solid; color: rgb(122, 161, 114)
 }
