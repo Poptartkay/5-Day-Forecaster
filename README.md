@@ -37,7 +37,7 @@ THEN I am again presented with current and future conditions for that city
 ​
 
 - Live Site URL: 
-- GitHub Repo : 
+- GitHub Repo : https://github.com/Poptartkay/5-Day-Forecaster
 
 ​
 ### Built with
@@ -51,9 +51,8 @@ THEN I am again presented with current and future conditions for that city
 ### What I learned
 
 I learned how to properly utilize and link API's to show correct weather predictions. As well as
-how to create a proper weather dashboard. I will admit there were some mild challenges here, but 
-overall I feel pretty good about this challenge.
-
+how to create a proper weather dashboard. I will admit there were some challenges here, like linking the
+api's. 
 ​
 
 ​
@@ -66,3 +65,5 @@ If there was anything I could differently is I would style the app differently.
 Kay Ford
 
 
+![Screenshot (83)](https://user-images.githubusercontent.com/91912984/214998396-67e88fae-6aff-4466-81f3-283d6e57ce26.png)
+![Screenshot (85)](https://user-images.githubusercontent.com/91912984/214998401-b18660a0-f37d-4d3e-a9e7-d7fa80489892.png)
