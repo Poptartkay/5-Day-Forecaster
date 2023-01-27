@@ -1,5 +1,5 @@
 
-var city = 'New York'
+var city = 'Seattle'
 var APIkey ='44f16f0f5b78c42ed94c3a20683882d4';
 var currentDate = moment().format('dddd, MMMM Do YYYY');
 var searchHistory = [];
@@ -75,11 +75,6 @@ function getweatherForecast() {
 var weatherDetails = $('.weatherDetails')
 
 
-
-
-
-
-
 function getForecastToday() {
 	var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIkey}`;
 
@@ -91,10 +86,6 @@ function getForecastToday() {
 	}).then(function (response) {
 		$('.weatherCity').text(response.name);
 		$('.weatherDate').text(currentDate);
-
-
-	
-
         
         var cityLon = response.coord.lon;
         var cityLat = response.coord.lat;
