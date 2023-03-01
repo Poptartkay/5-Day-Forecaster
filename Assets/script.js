@@ -1,5 +1,5 @@
 
-var city = 'Seattle'
+var city = 'New York'
 var APIkey ='44f16f0f5b78c42ed94c3a20683882d4';
 var currentDate = moment().format('dddd, MMMM Do YYYY');
 var searchHistory = [];
@@ -15,7 +15,7 @@ $('.search').on("click", function (event) {
 });
 var weatherForecastEl = $('.weatherForecast');
 
-
+// API Which Pulls for weather in five day forecast
 function getweatherForecast() {
 	var getweatherForecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${APIkey}`;
 
@@ -65,7 +65,10 @@ function getweatherForecast() {
 
 			var pElTemperature = $('<p>').text(`Temperature: ${myWeather[i].temp} °F`);
 			divElBody.append(pElTemperature);
-			
+			//Feels Like
+			var pElFeelsLike = $('<p>').text(`Feels Like: ${myWeather[i].feels_like} °F`);
+			divElBody.append(pElFeelsLike);
+			//Humidity
 			var pElHumidity = $('<p>').text(`Humidity: ${myWeather[i].humidity} %`);
 			divElBody.append(pElHumidity);
 
@@ -73,6 +76,12 @@ function getweatherForecast() {
 	});
 }
 var weatherDetails = $('.weatherDetails')
+
+
+
+
+
+// five day forecast
 
 
 function getForecastToday() {
@@ -86,14 +95,23 @@ function getForecastToday() {
 	}).then(function (response) {
 		$('.weatherCity').text(response.name);
 		$('.weatherDate').text(currentDate);
+
+
+		// location for the searched city
+
         
         var cityLon = response.coord.lon;
         var cityLat = response.coord.lat;
 		$('.weatherIcons').attr('src', `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
 
-	
+		//current temperature for city
 		var pEl = $('<p>').text(`Temperature: ${response.main.temp} °F`);
 		weatherDetails.append(pEl);
+
+		
+		var pElFeelsLike = $('<p>').text(`Feels Like: ${response.main.feels_like} °F`);
+		weatherDetails.append(pElFeelsLike);
+
 
 		
 		var pElHumidity = $('<p>').text(`Humidity: ${response.main.humidity} %`);
@@ -128,38 +146,41 @@ function getForecastToday() {
 }
 
 
-
+//Example content fot user experience and look of site
 function sampleCity() {
 
-    var searchHistoryStore = JSON.parse(localStorage.getItem('city'));
+	var searchHistoryStore = JSON.parse(localStorage.getItem('city'));
 
-    if (searchHistoryStore !== null) {
-        searchHistory = searchHistoryStore
-    }
-    getSearchHistory();
-    getForecastToday();
+	if (searchHistoryStore !== null) {
+		searchHistory = searchHistoryStore
+	}
+	getSearchHistory();
+	getForecastToday();
 }
-
+// Call function above to display sample city on load) sample city function 
 sampleCity();
 
+// Search History-clickable elements 
+
+
 function getSearchHistory() {
-    var searchHistoryClickify = $('.searchHistory');
-    searchHistoryClickify.empty();
-    for(let i = 0; i < searchHistory.length; i++) {
-        var rowEl = $('<row>');
-        var btnEl = $('<button>').text(`${searchHistory[i]}`)
-        rowEl.addClass('row histBtnRow');
-        btnEl.addClass('btn btn-outline-secondary btn-block histBtn');
-        btnEl.attr('type', 'button');
-        searchHistoryClickify.prepend(rowEl);
-        rowEl.append(btnEl);
-    } if (!city) {
-        return; 
-    }
-    $('.histBtn').on("click", function (event){
-        event.preventDefault();
-        city = $(this).text();
-        weatherForecastEl.empty();
-        getForecastToday();
-    });
+	var searchHistoryClickify = $('.searchHistory');
+	searchHistoryClickify.empty();
+	for (let i = 0; i < searchHistory.length; i++) {
+		var rowEl = $('<row>');
+		var btnEl = $('<button>').text(`${searchHistory[i]}`)
+		rowEl.addClass('row histBtnRow');
+		btnEl.addClass('btn btn-outline-secondary btn-block histBtn');
+		btnEl.attr('type', 'button');
+		searchHistoryClickify.prepend(rowEl);
+		rowEl.append(btnEl);
+	} if (!city) {
+		return;
+	}
+	$('.histBtn').on("click", function (event) {
+		event.preventDefault();
+		city = $(this).text();
+		weatherForecastEl.empty();
+		getForecastToday();
+	});
 }
