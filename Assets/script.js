@@ -9,7 +9,9 @@ const weatherDetails = document.querySelector('.weatherDetails');
 const searchBtn = document.querySelector('.search');
 searchBtn.addEventListener('click', function (event) {
   event.preventDefault();
-  const cityInput = event.target.parentElement.querySelector('.textVal').value.trim();
+  const inputValue = document.querySelector('.textVal')
+
+  const cityInput = inputValue.value.trim();
   if (!cityInput) {
     return;
   }
