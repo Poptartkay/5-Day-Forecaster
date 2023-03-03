@@ -19,12 +19,14 @@ searchBtn.addEventListener('click', function (event) {
   searchHistory.push(city);
   localStorage.setItem('city', JSON.stringify(searchHistory));
   weatherForecastEl.innerHTML = '';
-  getForecastToday();
-  getSearchHistory();
+//   getForecastToday();
+//   getSearchHistory();
+  getweatherForecast(cityInput);
+
 });
 
-function getweatherForecast() {
-  const getweatherForecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${APIkey}`;
+function getweatherForecast(cityInput) {
+  const getweatherForecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&units=imperial&appid=${APIkey}`;
 
   fetch(getweatherForecastURL)
     .then((response) => response.json())
@@ -73,7 +75,7 @@ function getweatherForecast() {
 }
 
 function getForecastToday() {
-  const getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIkey}`;
+  const getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=imperial&appid=${APIkey}`;
 
   weatherDetails.innerHTML = '';
 
