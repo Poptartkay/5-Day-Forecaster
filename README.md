@@ -37,6 +37,7 @@ THEN I am again presented with current and future conditions for that city
 ​
 
 - Live Site URL: https://poptartkay.github.io/5-Day-Forecaster/
+
 - GitHub Repo : https://github.com/Poptartkay/5-Day-Forecaster
 
 ​
@@ -65,5 +66,6 @@ If there was anything I could differently is I would style the app differently.
 Kay Ford
 
 
-![Screenshot (83)](https://user-images.githubusercontent.com/91912984/214998396-67e88fae-6aff-4466-81f3-283d6e57ce26.png)
-![Screenshot (85)](https://user-images.githubusercontent.com/91912984/214998401-b18660a0-f37d-4d3e-a9e7-d7fa80489892.png)
+
+![Screenshot (101)](https://user-images.githubusercontent.com/91912984/222630741-d2e19e77-326c-4fd4-8979-3759dfb9f16e.png)
+![Screenshot (102)](https://user-images.githubusercontent.com/91912984/222630750-36d93227-08de-4935-8420-1fec10376392.png)
